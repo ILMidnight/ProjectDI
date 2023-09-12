@@ -29,10 +29,10 @@ public class Player : MonoBehaviour
 
     private void Input()
     {
-        movementInput.x = UnityEngine.Input.GetAxis("Horizontal");
-        movementInput.y = UnityEngine.Input.GetAxis("Vertical");
+        movementInput.x = UnityEngine.Input.GetAxisRaw("Horizontal");
+        movementInput.y = UnityEngine.Input.GetAxisRaw("Vertical");
         movementInput = Vector2.ClampMagnitude(movementInput, 1f);
 
-        jumpInput = UnityEngine.Input.GetKey(KeyCode.Z);
+        jumpInput |= UnityEngine.Input.GetKey(KeyCode.Z);
     }
 }
